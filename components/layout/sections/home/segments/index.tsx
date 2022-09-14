@@ -14,7 +14,7 @@ interface SegmentsProps {
 export function Segments({ segments }: SegmentsProps) {
   return (
     <S.Segments>
-      <div
+      {/* <div
         className="absolute-image"
         data-aos="fade-up"
         data-aos-duration="1200"
@@ -26,7 +26,7 @@ export function Segments({ segments }: SegmentsProps) {
           layout="fill"
           alt="Icone"
         />
-      </div>
+      </div> */}
       <Container>
         <div
           className="content"

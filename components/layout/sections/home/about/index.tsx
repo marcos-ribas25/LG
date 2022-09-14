@@ -38,7 +38,7 @@ export function About({ services }: AboutProps) {
 
   return (
     <S.About id="sobre">
-      <div
+      {/* <div
         className="absolute-image"
         data-aos="fade-up"
         data-aos-duration="1200"
@@ -50,7 +50,7 @@ export function About({ services }: AboutProps) {
           layout="fill"
           alt="icone"
         />
-      </div>
+      </div> */}
 
       <Container>
         {size.width > 1024 && (
