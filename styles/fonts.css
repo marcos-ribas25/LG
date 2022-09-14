@@ -1,0 +1,107 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+strong,
+time,
+address,
+i,
+a,
+b,
+label,
+li,
+td {
+  text-rendering: optimizeLegibility !important;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+/* Font weight */
+
+[class*="-bold"] {
+  font-weight: 700;
+}
+
+[class*="-semibold"] {
+  font-weight: 600;
+}
+
+[class*="-medium"] {
+  font-weight: 500;
+}
+
+[class*="-regular"] {
+  font-weight: 400;
+}
+
+[class*="-light"] {
+  font-weight: 300;
+}
+
+[class*="-italic"] {
+  font-style: italic !important;
+}
+
+/* Titles */
+[class*="title-1"] {
+  font-size: 64px;
+}
+[class*="title-2"] {
+  font-size: 40px;
+}
+[class*="title-3"] {
+  font-size: 24px;
+}
+[class*="title-4"] {
+  font-size: 16px;
+}
+
+/* Paragraphs */
+[class*="paragraph-1"] {
+  font-size: 28px;
+}
+
+[class*="paragraph-2"] {
+  font-size: 16px;
+}
+
+/* Links */
+[class*="link-1"] {
+  font-size: 20px;
+}
+
+[class*="link-2"] {
+  font-size: 18px;
+}
+
+[class*="link-3"] {
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 1600px) {
+}
+
+@media only screen and (max-width: 1400px) {
+}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 500px) {
+}
