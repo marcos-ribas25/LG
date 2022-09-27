@@ -1,25 +1,22 @@
-/* React/Next */
-import Image from 'next/image';
+import Image from "next/image";
 
-/* Api/Data */
-import { baseImage, baseImageGallery } from 'src/services/api';
+import { baseImage, baseImageGallery } from "src/services/api";
 
-/* Styles */
-import * as S from './styles';
+import * as S from "./styles";
 
 interface NextImageProps {
   isBaseUrl?: boolean;
-  isBaseImageGallery?: boolean;
   src: string | undefined;
-  layout: 'fill' | 'fixed' | 'intrinsic' | 'responsive' | 'raw' | undefined;
   alt: string | undefined;
+  isBaseImageGallery?: boolean;
+  layout: "fill" | "fixed" | "intrinsic" | "responsive" | "raw" | undefined;
 }
 export function NextImage({
+  alt,
   src,
   layout,
   isBaseUrl,
   isBaseImageGallery,
-  alt,
 }: NextImageProps) {
   return (
     <S.Image>
@@ -31,7 +28,7 @@ export function NextImage({
               : isBaseImageGallery
               ? baseImageGallery + src
               : src
-            : '/images/default-image.webp'
+            : "/images/default-image.webp"
         }
         layout={layout}
         alt={alt}

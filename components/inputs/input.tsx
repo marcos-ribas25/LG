@@ -69,7 +69,7 @@ export function InputComponent({
           >
             {() => (
               <input
-                className="paragraph-2-semibold-europa"
+                className="paragraph-2-medium tk-poppins"
                 id={id}
                 defaultValue={defaultValue}
                 ref={inputRef}
@@ -82,7 +82,7 @@ export function InputComponent({
           <>
             {label && (
               <label
-                className="label-text paragraph-2-bold-europa"
+                className="label-text paragraph-2-bold tk-poppins"
                 htmlFor={id}
               >
                 {label}
@@ -95,7 +95,7 @@ export function InputComponent({
               ref={inputRef}
               name={name}
               {...rest}
-              className="paragraph-2-semibold-europa"
+              className="paragraph-2-medium tk-poppins"
             />
           </>
         )}

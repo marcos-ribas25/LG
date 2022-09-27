@@ -3,7 +3,7 @@ import router from "next/router";
 
 import { api } from "src/services/api";
 
-import { Container, ButtonComponent } from "components/data/components";
+import { Container, ButtonComponent } from "components/data";
 import {
   Form,
   FormHandles,
@@ -81,7 +81,7 @@ export function Contact({ linksContato }: ContatoProps) {
   }
 
   return (
-    <S.Contact id="contato">
+    <S.Contact>
       <Container>
         <div
           className="text"
@@ -90,9 +90,9 @@ export function Contact({ linksContato }: ContatoProps) {
           data-aos-delay="300"
           data-aos-easing="ease-out"
         >
-          <h2 className="title-3-medium-migha">Entre em contato</h2>
+          <h2 className="title-2-bold tk-noka uppercase">Entre em contato</h2>
 
-          <a href="#" className="link link-1-regular-europa">
+          <a href="#" className="link link-1-regular tk-poppins">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -105,46 +105,51 @@ export function Contact({ linksContato }: ContatoProps) {
                 </g>
               </g>
             </svg>
-            (43) 9 9636-9930
+            <span>(43) 9 9636-9930</span>
           </a>
 
-          <div className="link base link-1-regular-europa">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-            >
-              <g>
+          <div className="link base link-1-regular tk-poppins">
+            <i>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+              >
                 <g>
-                  <path d="M12.637 14.9l-4.089-3.446v-7.1h1.755v6.254l3.44 2.812zM10 0C4.476 0 0 4.476 0 10s4.476 10 10 10 10-4.476 10-10S15.524 0 10 0z" />
+                  <g>
+                    <path d="M12.637 14.9l-4.089-3.446v-7.1h1.755v6.254l3.44 2.812zM10 0C4.476 0 0 4.476 0 10s4.476 10 10 10 10-4.476 10-10S15.524 0 10 0z" />
+                  </g>
                 </g>
-              </g>
-            </svg>
+              </svg>
+            </i>
 
             <span>
-              8h às 17h, de segunda a sexta-feira
+              Segunda a sexta-feira
               <br /> (exceto feriados)
             </span>
           </div>
 
-          <a href="#" className="link link-1-regular-europa">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="20"
-              viewBox="0 0 15 20"
-            >
-              <g>
+          <a href="#" className="link base link-1-regular tk-poppins">
+            <i>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="20"
+                viewBox="0 0 15 20"
+              >
                 <g>
-                  <path d="M4.375 7.5a3.125 3.125 0 1 1 6.25 0 3.125 3.125 0 0 1-6.25 0zm3.896 12.096C13.946 11.368 15 10.524 15 7.5a7.5 7.5 0 1 0-15 0c0 3.024 1.054 3.868 6.73 12.096a.938.938 0 0 0 1.54 0z" />
+                  <g>
+                    <path d="M4.375 7.5a3.125 3.125 0 1 1 6.25 0 3.125 3.125 0 0 1-6.25 0zm3.896 12.096C13.946 11.368 15 10.524 15 7.5a7.5 7.5 0 1 0-15 0c0 3.024 1.054 3.868 6.73 12.096a.938.938 0 0 0 1.54 0z" />
+                  </g>
                 </g>
-              </g>
-            </svg>
-            Londrina/PR
+              </svg>
+            </i>
+            Av. Duque de Caxias, 1726 - Sala 707
+            <br /> Vila Brasil, Londrina - PR, 86010-190
           </a>
 
-          <a href="#" className="link link-1-regular-europa">
+          <a href="#" className="link link-1-regular tk-poppins">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -157,10 +162,10 @@ export function Contact({ linksContato }: ContatoProps) {
                 </g>
               </g>
             </svg>
-            contato@doutorneto.com.br
+            contato@lgadmin.com.br
           </a>
 
-          <a href="#" className="link link-1-regular-europa">
+          <a href="#" className="link link-1-regular tk-poppins">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -173,10 +178,10 @@ export function Contact({ linksContato }: ContatoProps) {
                 </g>
               </g>
             </svg>
-            @drjosedepaulafarianeto
+            @lgadmin
           </a>
 
-          <a href="#" className="link link-1-regular-europa">
+          <a href="#" className="link link-1-regular tk-poppins">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -189,10 +194,10 @@ export function Contact({ linksContato }: ContatoProps) {
                 </g>
               </g>
             </svg>
-            /drjosedepaulafarianeto
+            /lgadmin
           </a>
 
-          <a href="#" className="link link-1-regular-europa">
+          <a href="#" className="link link-1-regular tk-poppins">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -205,7 +210,7 @@ export function Contact({ linksContato }: ContatoProps) {
                 </g>
               </g>
             </svg>
-            /drjosedepaulafarianeto
+            /lgadmin
           </a>
         </div>
 
@@ -228,7 +233,7 @@ export function Contact({ linksContato }: ContatoProps) {
 
           <div className="input-content phone">
             <label
-              className="label-text paragraph-2-bold-europa"
+              className="label-text paragraph-2-bold tk-poppins"
               htmlFor={"phone"}
             >
               Telefone*
@@ -260,9 +265,9 @@ export function Contact({ linksContato }: ContatoProps) {
 
           <div className="actions">
             <ButtonComponent
-              className="bt yellow link-1-regular-europa"
+              backgroundColor="var(--orange)"
               type="submit"
-              text="enviar"
+              text="Enviar"
               loading={loading}
             />
           </div>

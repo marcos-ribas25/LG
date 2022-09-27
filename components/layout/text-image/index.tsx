@@ -3,97 +3,76 @@ import { NextImage } from "components/data/NextImage";
 import * as S from "./styles";
 
 interface TextImageProps {
-  color: string;
+  padding?: boolean;
+  color: "orange" | "blue" | "white";
   align: string;
   invert?: boolean;
-  btWidth: string;
+  titleSmall?: string;
   title: string;
   subTitle: string;
   image: string;
-  link?: string;
-  href?: string;
+  absoluteImage?: string;
+  link?: {
+    text: string;
+    url: string;
+  };
 }
 
 export function TextImage({
   title,
   image,
+  titleSmall,
   subTitle,
   link,
-  href,
   invert,
   color,
   align,
-  btWidth,
+  padding,
+  absoluteImage,
 }: TextImageProps) {
   return (
-    <S.TextImage btWidth={btWidth} align={align} color={color}>
-      {invert && (
-        <div className="text-image">
-          <div
-            className="text"
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            data-aos-delay="300"
-            data-aos-easing="ease-out"
-          >
-            <h2 className="title-2-bold tk-noka uppercase">{title}</h2>
-
-            <p className="paragraph-2-regular tk-poppins">{subTitle}</p>
-
-            {link && (
-              <ButtonComponent
-                className="bt link-3-bold tk-poppins"
-                href={href}
-                text={link}
-              />
-            )}
-          </div>
-
-          <div
-            className="image"
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            data-aos-delay="300"
-            data-aos-easing="ease-out"
-          >
-            <NextImage src={image} layout="fill" alt="Imagem sobre" />
-          </div>
+    <S.TextImage padding={padding} invert={invert} align={align} color={color}>
+      {absoluteImage && (
+        <div className="absolute-image">
+          <NextImage src={absoluteImage} layout="fill" alt="Icone absoluto" />
         </div>
       )}
 
-      {!invert && (
+      <div
+        className="text-image"
+        data-aos="zoom-in"
+        data-aos-duration="1200"
+        data-aos-delay="300"
+        data-aos-easing="ease-out"
+      >
+        <div className="text">
+          {titleSmall && <h3 className="title-4-regular tk-poppins">{titleSmall}</h3>}
+
+          <h2 className="title-2-bold tk-noka uppercase">{title}</h2>
+
+          <p className="paragraph-2-regular tk-poppins">{subTitle}</p>
+
+          {link && (
+            <ButtonComponent
+              backgroundColor={
+                color && `var(--${color === "orange" ? "blue" : "orange"})`
+              }
+              href={link.url}
+              text={link.text}
+            />
+          )}
+        </div>
+
         <div
-          className="text-image"
-          data-aos="fade-up"
+          className="image"
+          data-aos="zoom-in"
           data-aos-duration="1200"
           data-aos-delay="300"
           data-aos-easing="ease-out"
         >
-          <div className="image">
-            <NextImage src={image} layout="fill" alt="Imagem sobre" />
-          </div>
-
-          <div
-            className="text"
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            data-aos-delay="300"
-            data-aos-easing="ease-out"
-          >
-            <h2 className="title-2-bold tk-noka uppercase">{title}</h2>
-
-            <p className="paragraph-2-regular tk-poppins">{subTitle}</p>
-
-            {link && (
-              <ButtonComponent
-                className="bt link-3-bold tk-poppins"
-                href={href}
-                text={link}
-              />
-            )}
-          </div>
+          <NextImage src={image} layout="fill" alt="Imagem sobre" />
         </div>
-      )}
+      </div>
     </S.TextImage>
   );
 }

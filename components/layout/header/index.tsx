@@ -92,10 +92,10 @@ export function HeaderComponent() {
                       <path
                         fill="none"
                         stroke="#002749"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-miterlimit="20"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeMiterlimit="20"
+                        strokeWidth="2"
                         d="M20.83 3.173a2.527 2.527 0 0 0-1.763-1.818C17.504.973 11.25.973 11.25.973v0s-6.255 0-7.818.418A2.527 2.527 0 0 0 1.668 3.21a26.363 26.363 0 0 0-.418 4.81c-.01 1.624.13 3.246.418 4.844.242.85.911 1.512 1.764 1.746 1.563.418 7.818.418 7.818.418v0s6.254 0 7.817-.418a2.527 2.527 0 0 0 1.764-1.818c.284-1.575.424-3.173.418-4.773.01-1.624-.13-3.246-.418-4.845z"
                       />
                     </g>
@@ -103,10 +103,10 @@ export function HeaderComponent() {
                       <path
                         fill="none"
                         stroke="#002749"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-miterlimit="20"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeMiterlimit="20"
+                        strokeWidth="2"
                         d="M8.475 11.663v0L14.9 8.01v0L8.475 4.357v0z"
                       />
                     </g>
@@ -119,19 +119,21 @@ export function HeaderComponent() {
       </div>
 
       <Container>
-        <div className="box-left"  data-aos="fade-right"
-            data-aos-duration="1500">
+        <div className="box-left">
           <div className="logo-header">
-            <NextImage
+            <img
+              src="/images/logo-header.webp"
+              alt="Logo header"
+            />
+            {/* <NextImage
               src="/images/logo-header.webp"
               alt="Logo header"
               layout="fill"
-            />
+            /> */}
           </div>
         </div>
 
-        <div className="box-right" data-aos="fade-left"
-            data-aos-duration="1500">
+        <div className="box-right">
           <nav>
             <Link href={"/"} passHref>
               <a href="replaced" className="link-1-medium tk-noka">
@@ -139,7 +141,7 @@ export function HeaderComponent() {
               </a>
             </Link>
 
-            <Link href={"/sobre-nos"} passHref>
+            <Link href={"/sobre"} passHref>
               <a href="replaced" className="link-1-medium tk-noka">
                 sobre nós
               </a>
@@ -159,7 +161,8 @@ export function HeaderComponent() {
           </nav>
 
           <ButtonComponent
-            className="bt blue link-1-bold tk-poppins"
+            backgroundColor="var(--blue)"
+            className="bt link-1-bold tk-poppins"
             href="#contato"
             text="Entre em contato"
           />

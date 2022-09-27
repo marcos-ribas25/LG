@@ -18,11 +18,11 @@ export function TextAreaComponent({ id, name, label, ...rest }: any) {
 
   return (
     <S.Input>
-      <label htmlFor={id} className="paragraph-2-bold-europa">
+      <label htmlFor={id} className="paragraph-2-bold tk-poppins">
         {label}
       </label>
 
-      <textarea id={id} defaultValue={defaultValue} ref={inputRef} {...rest} className="paragraph-2-semibold-europa" />
+      <textarea id={id} defaultValue={defaultValue} ref={inputRef} {...rest} className="paragraph-2-regular tk-poppins" />
 
       {error && <span className="paragraph-2-bold-europa error-message">{error}</span>}
     </S.Input>

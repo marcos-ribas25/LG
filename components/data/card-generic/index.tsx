@@ -1,11 +1,11 @@
 import { NextImage } from "../NextImage";
 
-import { Service } from "components/layout/sections/home/about";
+import { GenericCard } from "./data";
 
 import * as S from "./styles";
 
 interface CardTreatmentProps {
-  data: Service;
+  data: GenericCard;
 }
 
 export function CardGeneric({ data }: CardTreatmentProps) {

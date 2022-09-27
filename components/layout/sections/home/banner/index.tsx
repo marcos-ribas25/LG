@@ -1,14 +1,11 @@
-import {
-  Container,
-  ButtonComponent,
-  NextImage,
-} from "components/data/components";
 import { useEffect, useState } from "react";
+
+import { Container, NextImage } from "components/data";
+
 import * as S from "./styles";
 
 export function Banner() {
   const [heightHeader, setHeightHeader] = useState("");
-
   useEffect(() => {
     if (process.browser) {
       const header = document.querySelector("header");
@@ -22,6 +19,14 @@ export function Banner() {
 
   return (
     <S.BannerComponent heightHeader={heightHeader}>
+      <div className="bg-image">
+        <NextImage
+          layout="fill"
+          alt="banner home"
+          src="/images/banner-home.webp"
+        />
+      </div>
+      
       <Container>
         <h1
           className="title-1-bold tk-noka uppercase"

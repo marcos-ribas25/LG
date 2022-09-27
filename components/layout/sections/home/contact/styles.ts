@@ -1,24 +1,9 @@
 import styled from "styled-components";
 
 export const Contact = styled.section`
-  background-image: url("/images/bg-contact.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
   padding: 100px 0;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #11314d;
-    opacity: 0.75;
-  }
-
+  background-color: var(--blue);
+ 
   .container {
     display: flex;
     gap: 40px;
@@ -47,11 +32,16 @@ export const Contact = styled.section`
       fill: #fff;
       color: #fff;
       transition: all 0.3s;
+
+      svg {
+        width: 20px;
+        padding-bottom: 2px;
+      }
     }
 
     .link:hover {
-      color: var(--yellow);
-      fill: var(--yellow);
+      color: var(--orange);
+      fill: var(--orange);
     }
 
     .link + * {
@@ -59,7 +49,7 @@ export const Contact = styled.section`
     }
 
     .link.base {
-      align-items: baseline;
+      align-items: flex-start;
 
       svg {
         display: block;
@@ -81,6 +71,12 @@ export const Contact = styled.section`
   button {
     border: unset;
     max-width: 360px;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: #fff;
+    color: var(--orange);
   }
 
   @media only screen and (max-width: 1600px) {
@@ -131,11 +127,15 @@ export const Contact = styled.section`
     padding: 40px 0 60px;
 
     h2 {
-      font-size: 32px;
+      font-size: 30px;
+    }
+
+    form {
+      max-width: 350px;
     }
 
     .text {
-      max-width: 285px;
+      max-width: 315px;
 
       .link {
         svg {
@@ -180,13 +180,19 @@ export const Contact = styled.section`
     padding: 25px 0 50px;
 
     h2 {
-      font-size: 30px;
+      font-size: 26px;
       max-width: 270px;
     }
 
     .text {
       .link+*{
         margin-top: 11px;
+      }
+
+      .link {
+        svg {
+          max-width: 15px;
+        }
       }
     }
   }

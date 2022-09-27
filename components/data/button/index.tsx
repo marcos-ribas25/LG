@@ -10,7 +10,7 @@ import * as S from "./styles";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<any> {
   text: string;
-  backgroundColor?: string;
+  backgroundColor?: "var(--orange)" | "var(--blue)";
   href?: string;
   type?: "submit" | "button";
   loading?: boolean;
@@ -30,7 +30,7 @@ export function ButtonComponent({
     <S.Button backgroundColor={backgroundColor} $loading={loading} className="button">
       {href && !type ? (
         <Link href={href} passHref>
-          <a href="replace" className="txt-sz-8-bold-roboto-slab" {...props}>
+          <a href="replace" className="bt link-3-bold tk-poppins" {...props}>
             {icon && (
               <div
                 className="icon"
@@ -45,7 +45,7 @@ export function ButtonComponent({
         </Link>
       ) : (
         <button
-          className="txt-sz-8-bold-roboto-slab"
+          className="bt link-3-bold tk-poppins"
           type={type ? type : "submit"}
           disabled={loading}
           {...props}

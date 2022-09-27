@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { lighten } from "polished";
 
 interface ButtonProps {
-  backgroundColor?: string;
+  backgroundColor?: "var(--orange)" | "var(--blue)";
   $loading?: boolean;
 }
 
@@ -12,21 +12,22 @@ export const Button = styled.div<ButtonProps>`
 
   a,
   button {
-    width: 100%;
     height: 48px;
-    padding: 0 35px;
-    display: flex;
+    padding: 0 50px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     border-radius: 25px;
-    transition: 0.2s ;
+    transition: 0.2s;
     border: unset;
+    background-color: ${(props) =>
+      props.backgroundColor ? props.backgroundColor : "#fff"};
   }
 
   a:hover,
   button:hover {
-    transition:  0.2s;
+    transition: 0.2s;
   }
 
   .bt.blue {
@@ -71,6 +72,7 @@ export const Button = styled.div<ButtonProps>`
     a,
     button {
       height: 46px;
+      padding: 0 45px;
     }
   }
 
@@ -78,6 +80,7 @@ export const Button = styled.div<ButtonProps>`
     a,
     button {
       height: 44px;
+      padding: 0 40px;
     }
   }
 
@@ -85,6 +88,7 @@ export const Button = styled.div<ButtonProps>`
     a,
     button {
       height: 42px;
+      padding: 0 35px;
     }
   }
 
@@ -92,6 +96,7 @@ export const Button = styled.div<ButtonProps>`
     a,
     button {
       height: 40px;
+      padding: 0 30px;
     }
   }
 
@@ -106,6 +111,7 @@ export const Button = styled.div<ButtonProps>`
     a,
     button {
       height: 36px;
+      padding: 0 25px;
     }
   }
 
@@ -113,6 +119,7 @@ export const Button = styled.div<ButtonProps>`
     a,
     button {
       height: 32px;
+      padding: 0 15px;
     }
   }
 
