@@ -90,6 +90,11 @@ export const Button = styled.div<ButtonProps>`
       height: 42px;
       padding: 0 35px;
     }
+
+    .loader-button {
+      width: 30px;
+      height: 30px;
+    }
   }
 
   @media only screen and (max-width: 1024px) {
@@ -105,6 +110,11 @@ export const Button = styled.div<ButtonProps>`
     button {
       height: 38px;
     }
+
+    .loader-button {
+      width: 25px;
+      height: 25px;
+    }
   }
 
   @media only screen and (max-width: 600px) {
@@ -112,6 +122,11 @@ export const Button = styled.div<ButtonProps>`
     button {
       height: 36px;
       padding: 0 25px;
+    }
+
+    .loader-button {
+      width: 19px;
+      height: 19px;
     }
   }
 

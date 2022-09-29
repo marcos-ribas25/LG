@@ -1,6 +1,12 @@
+import Head from "next/head";
+import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
 
-import { Layout } from "components/layout";
+import { Customer } from "components/data/customers";
+import { GenericCard } from "components/data/card-generic/data";
+import { Segment } from "components/layout/sections/home/segments";
+import { Testimonial } from "components/layout/sections/home/testimonial";
+
 import {
   Banner,
   About,
@@ -9,13 +15,10 @@ import {
   Parallax,
   TestimonialComponent,
 } from "components/layout/sections/home";
-import { TextImage } from "components/layout/text-image";
+import { Layout } from "components/layout";
+import { TextImage, Customers } from "components/data";
 
 import * as S from "styles/pages/home";
-import { Customer, Customers } from "components/layout/customers";
-import { Segment } from "components/layout/sections/home/segments";
-import { Testimonial } from "components/layout/sections/home/testimonial";
-import { GenericCard } from "components/data/card-generic/data";
 
 interface HomeProps {
   services: GenericCard[];
@@ -30,12 +33,18 @@ export default function HomePage({
   customers,
   testimonials,
 }: HomeProps) {
+  const router = useRouter();
   return (
     <Layout>
+      <Head>
+        <link rel="canonical" href={router.pathname} />
+        <meta property="og:url" content={router.query.pathname?.toString()} />
+      </Head>
+
       <S.Home>
         <Banner />
 
-        <About grid="repeat(4,1fr)" button data={services} />
+        <About absoluteImage grid="repeat(4,1fr)" button data={services} />
 
         <TextImage
           invert

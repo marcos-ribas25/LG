@@ -12,6 +12,7 @@ import * as S from "./styles";
 interface Props {
   id?: string;
   name: string;
+  accept?: string;
   labelAnimation?: string;
   label?: string;
   edit?: boolean;
@@ -31,6 +32,7 @@ type InputProps = JSX.IntrinsicElements["input"] & Props;
 export function InputComponent({
   id,
   name,
+  accept,
   labelAnimation,
   edit,
   type,
@@ -40,7 +42,6 @@ export function InputComponent({
   ...rest
 }: InputProps) {
   const [value, setValue] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const { fieldName, registerField, defaultValue, error } = useField(name);
 
@@ -91,9 +92,18 @@ export function InputComponent({
 
             <input
               id={id}
+              type={type}
+              accept={accept}
               defaultValue={defaultValue}
               ref={inputRef}
               name={name}
+              onChange={(e) => {
+                setValue(e.target.value);
+  
+                if (onChangeInput) {
+                  onChangeInput(e.target.value);
+                }
+              }}
               {...rest}
               className="paragraph-2-medium tk-poppins"
             />

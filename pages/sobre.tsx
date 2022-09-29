@@ -1,11 +1,15 @@
-import { CardGeneric } from "components/data/card-generic";
-import { GenericCard } from "components/data/card-generic/data";
-import { NextImage } from "components/data/NextImage";
-import { Layout } from "components/layout";
-import { Customer, Customers } from "components/layout/customers";
-import { About, Contact } from "components/layout/sections/home";
-import { TextImage } from "components/layout/text-image";
+import Head from "next/head";
+import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
+
+import { GenericCard } from "components/data/card-generic/data";
+import { Customer } from "components/data/customers";
+
+import { Layout } from "components/layout";
+import { NextImage, Customers } from "components/data";
+import { TextImage } from "components/data/text-image";
+import { About, Contact } from "components/layout/sections/home";
+
 import * as S from "styles/pages/sobre";
 
 interface SobrePageProps {
@@ -13,13 +17,32 @@ interface SobrePageProps {
   customers: Customer[];
 }
 
-export default function SobrePage({ missao,customers }: SobrePageProps) {
+export default function SobrePage({ missao, customers }: SobrePageProps) {
+  const router = useRouter();
+
   return (
     <Layout>
+      <Head>
+        <title>Sobre nós</title>
+        <link rel="canonical" href={router.pathname} />
+        <meta property="og:title" content="Sobre nós" />
+        <meta name="og:description" content="Sobre nós" />
+        <meta name="description" content="Sobre nós" />
+        <meta itemProp="description" content="Sobre nós" />
+        <meta name="twitter:description" content="Sobre nós" />
+        <meta property="og:url" content={router.query.pathname?.toString()} />
+      </Head>
+
       <S.Sobre>
         <section className="banner-about">
           <div className="text">
-            <h1 className="title-1-bold tk-noka uppercase">
+            <h1
+              className="title-1-bold tk-noka uppercase"
+              data-aos="fade-up"
+              data-aos-duration="1200"
+              data-aos-delay="300"
+              data-aos-easing="ease-out"
+            >
               <span>serviços para</span> todas as suas necessidades
             </h1>
           </div>

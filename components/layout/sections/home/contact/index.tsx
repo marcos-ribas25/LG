@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
+
 import router from "next/router";
 
 import { api } from "src/services/api";
 
-import { Container, ButtonComponent } from "components/data";
 import {
   Form,
   FormHandles,
@@ -11,21 +11,18 @@ import {
   InputComponent,
   TextAreaComponent,
 } from "components/inputs/core";
+import { Container, ButtonComponent } from "components/data";
 
 import * as S from "./styles";
 
 interface SubmitProps {
   name: string;
   email: string;
-  message: string;
   phone: string;
+  message: string;
 }
 
-interface ContatoProps {
-  linksContato?: boolean;
-}
-
-export function Contact({ linksContato }: ContatoProps) {
+export function Contact() {
   const [loading, setLoading] = useState(false);
 
   const formRef = useRef<FormHandles>(null);

@@ -5,9 +5,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import "swiper/css";
+import "swiper/css/thumbs";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
-import "swiper/css/thumbs";
 import "swiper/css/effect-fade";
 
 import SwiperCore, {
@@ -34,16 +34,19 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>Dr.José Neto</title>
-        <meta name="description" content="Doutor José neto" />
-        <meta itemProp="description" content="Doutor José neto" />
-        <meta name="twitter:description" content="Doutor José neto" />
-        <meta name="og:description" content="Doutor José neto" />
-        <meta property="og:title" content="Dr.José Neto" />
+        <title>LG</title>
+        <meta name="description" content="LG Administradora de serviços" />
+        <meta itemProp="description" content="LG Administradora de serviços" />
+        <meta
+          name="twitter:description"
+          content="LG Administradora de serviços"
+        />
+        <meta name="og:description" content="LG Administradora de serviços" />
+        <meta property="og:title" content="LG Administradora de serviços" />
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://drjoseneto.vercel.app/" />
+        <link rel="canonical" href="https://lgadministradora.vercel.app/" />
 
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -61,7 +64,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="author" content="Codie" />
         <meta name="rating" content="general" />
-        <link rel="stylesheet" href="https://use.typekit.net/ucm7zit.css" style={{display:"swap"}}/>
+        <link
+          rel="stylesheet"
+          href="https://use.typekit.net/ucm7zit.css"
+          style={{ display: "swap" }}
+        />
       </Head>
 
       <GlobalStyle />

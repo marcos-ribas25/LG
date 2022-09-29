@@ -11,27 +11,31 @@ export const Customers = styled.section`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: -7.5%;
-    width: 115%;
-    display: none;
-    align-items: center;
+    left: 0;
+    width: 100%;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
     z-index: 5;
-    padding: 0;
 
     button {
-      background-color: var(--orange);
-      width: 31px;
-      height: 31px;
-      border-radius: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       border: unset;
+      background-color: transparent;
+      width: 40px;
+      height: 40px;
+      padding: 0;
 
       svg {
-        width: 17px;
+        fill: var(--orange);
+        stroke: #fff;
+        transition: 0.45s;
+      }
+    }
+
+    button:hover {
+      svg {
         fill: var(--blue);
+        stroke: #fff;
       }
     }
   }
@@ -110,7 +114,9 @@ export const Customers = styled.section`
     }
 
     .navigation {
-      display: flex;
+      svg {
+        width: 32px;
+      }
     }
 
     .image {
@@ -135,20 +141,6 @@ export const Customers = styled.section`
       margin-bottom: 18px;
     }
 
-    .navigation {
-      max-width: 100%;
-      left: 0;
-
-      button {
-        width: 28px;
-        height: 28px;
-
-        svg {
-          width: 12px;
-        }
-      }
-    }
-
     .image {
       max-width: 195px;
     }
@@ -162,16 +154,8 @@ export const Customers = styled.section`
     padding: 35px 0 30px;
 
     .navigation {
-      max-width: 100%;
-      left: 0;
-
-      button {
+      svg {
         width: 25px;
-        height: 25px;
-
-        svg {
-          width: 10px;
-        }
       }
     }
 
@@ -194,10 +178,16 @@ export const Customers = styled.section`
     .container {
       max-width: 350px;
     }
+
+    .navigation {
+      svg {
+        width: 23px;
+      }
+    }
   }
 
   @media only screen and (max-width: 400px) {
-    padding: 24px 0 20px;
+    padding: 24px 0 30px;
 
     h2 {
       font-size: 17px;

@@ -1,9 +1,13 @@
-import { GenericCard } from "components/data/card-generic/data";
-import { NextImage } from "components/data/NextImage";
-import { Layout } from "components/layout";
-import { About } from "components/layout/sections/home";
-import { TextImage } from "components/layout/text-image";
+import Head from "next/head";
+import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
+
+import { GenericCard } from "components/data/card-generic/data";
+
+import { Layout } from "components/layout";
+import { NextImage, TextImage } from "components/data";
+import { About } from "components/layout/sections/home";
+
 import * as S from "styles/pages/servicos";
 
 interface ServicoPageProps {
@@ -11,8 +15,20 @@ interface ServicoPageProps {
 }
 
 export default function ServicosPage({ services }: ServicoPageProps) {
+  const router = useRouter()
   return (
     <Layout>
+      <Head>
+        <title>Serviços</title>
+        <link rel="canonical" href={router.pathname} />
+        <meta property="og:title" content="Serviços" />
+        <meta name="og:description" content="Serviços" />
+        <meta name="description" content="Serviços" />
+        <meta itemProp="description" content="Serviços" />
+        <meta name="twitter:description" content="Serviços" />
+        <meta property="og:url" content={router.query.pathname?.toString()} />
+      </Head>
+
       <S.Servicos>
         <div className="servicos">
           <div className="image-absolute">

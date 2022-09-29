@@ -51,7 +51,8 @@ export const TextImage = styled.section<TextImageStyleProps>`
   }
 
   .text {
-    padding: ${(props) => props.align === "left" ? "20px 50px 20px 0" : "20px 0 20px 50px"};
+    padding: ${(props) =>
+      props.align === "left" ? "20px 80px 20px 0" : "20px 0 20px 80px"};
     max-width: 660px;
     width: 100%;
   }
@@ -90,6 +91,7 @@ export const TextImage = styled.section<TextImageStyleProps>`
     margin-bottom: 35px;
     max-height: 170px;
     overflow-y: auto;
+    padding-right: 20px;
   }
 
   p::-webkit-scrollbar {
@@ -102,7 +104,7 @@ export const TextImage = styled.section<TextImageStyleProps>`
   }
 
   p::-webkit-scrollbar-thumb {
-    background: var(--blue);
+    background: ${(props) => props.color === "orange" ? "var(--blue)" : "var(--orange)"};
     border-radius: 5px;
   }
 
@@ -120,6 +122,8 @@ export const TextImage = styled.section<TextImageStyleProps>`
   }
 
   @media only screen and (max-width: 1600px) {
+    padding-top: ${(props) => props.padding && "40px"};
+
     h2 {
       margin-bottom: 20px;
     }
@@ -131,6 +135,8 @@ export const TextImage = styled.section<TextImageStyleProps>`
   }
 
   @media only screen and (max-width: 1400px) {
+    padding-top: ${(props) => props.padding && "30px"};
+
     h2 {
       margin-bottom: 15px;
     }
@@ -139,7 +145,7 @@ export const TextImage = styled.section<TextImageStyleProps>`
       line-height: 22px;
       margin-bottom: 25px;
       font-size: 13.5px;
-      max-height: 110px;
+      max-height: 150px;
     }
 
     .text {
@@ -148,6 +154,8 @@ export const TextImage = styled.section<TextImageStyleProps>`
   }
 
   @media only screen and (max-width: 1200px) {
+    padding-top: ${(props) => props.padding && "20px"};
+
     h2 {
       margin-bottom: 10px;
     }
@@ -157,7 +165,6 @@ export const TextImage = styled.section<TextImageStyleProps>`
       margin-bottom: 20px;
       font-size: 12.5px;
       max-height: 105px;
-      padding-right: 15px;
     }
 
     .text {
@@ -165,7 +172,9 @@ export const TextImage = styled.section<TextImageStyleProps>`
     }
   }
 
-  @media only screen and (max-width:1024px) {
+  @media only screen and (max-width: 1024px) {
+    padding-top: ${(props) => props.padding && "0"};
+
     .image {
       display: none;
     }
@@ -196,7 +205,7 @@ export const TextImage = styled.section<TextImageStyleProps>`
     }
   }
 
-  @media only screen and (max-width:768px) {
+  @media only screen and (max-width: 768px) {
     .text-image {
       padding: 30px 15px;
     }
@@ -212,7 +221,7 @@ export const TextImage = styled.section<TextImageStyleProps>`
     }
   }
 
-  @media only screen and (max-width:500px) {
+  @media only screen and (max-width: 500px) {
     .text-image {
       padding: 25px 15px;
     }

@@ -1,5 +1,6 @@
-import { ButtonComponent } from "components/data/button";
-import { Container } from "components/data/container";
+import { ButtonComponent, Container } from "components/data";
+
+import {} from "components/data/container";
 import * as S from "./styles";
 
 export function Parallax() {

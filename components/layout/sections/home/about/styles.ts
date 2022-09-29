@@ -19,22 +19,28 @@ export const About = styled.section<AboutStylesProps>`
     left: 0;
     width: 100%;
     display: none;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    z-index: 5;
 
     button {
-      background-color: var(--orange);
-      width: 31px;
-      height: 31px;
-      border-radius: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       border: unset;
+      background-color: transparent;
+      width: 40px;
+      height: 40px;
+      padding: 0;
 
       svg {
-        width: 17px;
+        fill: var(--orange);
+        stroke: #fff;
+        transition: 0.45s;
+      }
+    }
+
+    button:hover {
+      svg {
         fill: var(--blue);
+        stroke: #fff;
       }
     }
   }
@@ -45,7 +51,7 @@ export const About = styled.section<AboutStylesProps>`
     gap: 50px;
   }
 
-  .grid-services + * {
+  .button {
     margin-top: 50px;
   }
 
@@ -71,58 +77,69 @@ export const About = styled.section<AboutStylesProps>`
   @media only screen and (max-width: 1600px) {
     padding: 85px 0;
 
-    .grid-services + * {
+    .button {
       margin-top: 45px;
+    }
+
+    .grid-services {
+      gap: 45px;
     }
   }
 
   @media only screen and (max-width: 1400px) {
     padding: 70px 0;
 
-    .grid-services + * {
+    .button {
       margin-top: 40px;
+    }
+
+    .grid-services {
+      gap: 40px;
     }
   }
 
   @media only screen and (max-width: 1200px) {
     padding: 50px 0;
 
-    .grid-services + * {
+    .button {
       margin-top: 30px;
+    }
+
+    .grid-services {
+      gap: 35px;
     }
   }
 
   @media only screen and (max-width: 1024px) {
     padding: 40px 0;
 
+    .navigation {
+      display: flex;
+
+      svg {
+        width: 32px;
+      }
+    }
+
     .absolute-image {
       display: none;
     }
 
     .hide-mobile {
-      display: none!important;
+      display: none !important;
     }
 
     .show-mobile {
-      display: block!important;
+      display: block !important;
     }
-
-    .swiper-wrapper {
-      display: flex;
-      align-items: center;
-    } 
 
     .swiper-services {
       max-width: 650px;
       margin: 0 auto;
     }
 
-    .swiper-services + * {
+    .button {
       margin-top: 25px;
-    }
-
-    .navigation {
-      display: flex;
     }
   }
 
@@ -133,8 +150,14 @@ export const About = styled.section<AboutStylesProps>`
       max-width: 400px;
     }
 
-    .swiper-services + * {
+    .button {
       margin-top: 25px;
+    }
+
+    .navigation {
+      svg {
+        width: 25px;
+      }
     }
   }
 
@@ -148,6 +171,12 @@ export const About = styled.section<AboutStylesProps>`
     .swiper-services {
       max-width: 380px;
     }
+
+    .navigation {
+      svg {
+        width: 23px;
+      }
+    }
   }
 
   @media only screen and (max-width: 500px) {
@@ -159,7 +188,12 @@ export const About = styled.section<AboutStylesProps>`
       max-width: 215px;
     }
 
-    .swiper-services + * {
+    .swiper-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .button {
       margin-top: 20px;
     }
   }
@@ -173,24 +207,13 @@ export const About = styled.section<AboutStylesProps>`
       max-width: 215px;
     }
 
-    .swiper-services + * {
+    .button {
       margin-top: 20px;
     }
 
     .button {
       a {
         font-size: 11.5px;
-      }
-    }
-
-    .navigation {
-      button {
-        width: 24px;
-        height: 24px;
-
-        svg {
-          width: 12px;
-        }
       }
     }
   }

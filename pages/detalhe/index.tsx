@@ -1,14 +1,33 @@
-import { ButtonComponent } from "components/data/button";
-import { Container } from "components/data/container";
-import { NextImage } from "components/data/NextImage";
+import Head from "next/head";
+import { useRouter } from "next/router";
+
 import { Layout } from "components/layout";
 import { Contact } from "components/layout/sections/home";
-import { TextImage } from "components/layout/text-image";
+import {
+  ButtonComponent,
+  Container,
+  NextImage,
+  TextImage,
+} from "components/data";
+
 import * as S from "styles/pages/detalhe";
 
 export default function DetalhePage() {
+  const router = useRouter();
+
   return (
     <Layout>
+      <Head>
+        <title>Detalhe</title>
+        <link rel="canonical" href={router.pathname} />
+        <meta property="og:title" content="Detalhe" />
+        <meta name="og:description" content="Detalhe" />
+        <meta name="description" content="Detalhe" />
+        <meta itemProp="description" content="Detalhe" />
+        <meta name="twitter:description" content="Detalhe" />
+        <meta property="og:url" content={router.query.pathname?.toString()} />
+      </Head>
+
       <S.Detalhe>
         <div className="banner-service">
           <div className="absolute-image">

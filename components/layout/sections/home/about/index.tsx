@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { GenericCard } from "components/data/card-generic/data";
 
 import {
+  NextImage,
   Container,
   CardGeneric,
   ButtonComponent,
-  NextImage,
 } from "components/data";
 
 import * as S from "./styles";
@@ -15,25 +14,28 @@ import * as S from "./styles";
 interface AboutProps {
   button?: boolean;
   data: GenericCard[];
+  absoluteImage?: boolean;
   grid: "repeat(3,1fr)" | "repeat(4,1fr)";
 }
 
-export function About({ data, button, grid }: AboutProps) {
+export function About({ data, button, grid, absoluteImage }: AboutProps) {
   return (
     <S.About id="sobre" grid={grid}>
-      <div
-        className="absolute-image"
-        data-aos="fade-up"
-        data-aos-duration="1200"
-        data-aos-delay="300"
-        data-aos-easing="ease-out"
-      >
-        <NextImage
-          src="/images/absolute-about-home.webp"
-          layout="fill"
-          alt="icone"
-        />
-      </div>
+      {absoluteImage && (
+        <div
+          className="absolute-image"
+          data-aos="fade-up"
+          data-aos-duration="1200"
+          data-aos-delay="300"
+          data-aos-easing="ease-out"
+        >
+          <NextImage
+            src="/images/absolute-about-home.webp"
+            layout="fill"
+            alt="icone"
+          />
+        </div>
+      )}
 
       <Container>
         <div className="grid-services hide-mobile">
@@ -85,14 +87,52 @@ export function About({ data, button, grid }: AboutProps) {
 
         <div className="navigation">
           <button className="nav-prev">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+            >
+              <g>
+                <g>
+                  <g>
+                    <path d="M0 20C0 8.954 8.954 0 20 0s20 8.954 20 20-8.954 20-20 20S0 31.046 0 20z" />
+                  </g>
+                  <g>
+                    <path
+                      fill="none"
+                      stroke-miterlimit="20"
+                      stroke-width="3"
+                      d="M24.194 9.611v0l-10.388 10.39v0l10.388 10.388v0"
+                    />
+                  </g>
+                </g>
+              </g>
             </svg>
           </button>
 
           <button className="nav-next">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+            >
+              <g>
+                <g transform="rotate(-180 20 20)">
+                  <g>
+                    <path d="M0 20C0 8.954 8.954 0 20 0s20 8.954 20 20-8.954 20-20 20S0 31.046 0 20z" />
+                  </g>
+                  <g>
+                    <path
+                      fill="none"
+                      stroke-miterlimit="20"
+                      stroke-width="3"
+                      d="M24.194 9.611v0l-10.388 10.39v0l10.388 10.388v0"
+                    />
+                  </g>
+                </g>
+              </g>
             </svg>
           </button>
         </div>

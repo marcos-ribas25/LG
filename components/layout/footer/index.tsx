@@ -1,7 +1,6 @@
-import { ButtonComponent } from "components/data/button";
-import { Container } from "components/data/container";
-import { NextImage } from "components/data/NextImage";
 import Link from "next/link";
+
+import { Container, NextImage } from "components/data";
 
 import * as S from "./styles";
 
@@ -101,7 +100,7 @@ export function FooterComponent() {
           </div>
 
           <div className="links">
-          <h4 className="title-4-bold tk-poppins">Contato</h4>
+            <h4 className="title-4-bold tk-poppins">Contato</h4>
 
             <a href="" className="link-3-regular tk-poppins link">
               <svg
@@ -154,7 +153,9 @@ export function FooterComponent() {
         </div>
 
         <div className="codie">
-          <span className="paragraph-2-semibold tk-poppins">Desenvolvido por</span>
+          <span className="paragraph-2-semibold tk-poppins">
+            Desenvolvido por
+          </span>
 
           <div className="logo-codie">
             <NextImage

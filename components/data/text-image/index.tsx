@@ -1,33 +1,33 @@
-import { ButtonComponent } from "components/data/button";
-import { NextImage } from "components/data/NextImage";
+import { ButtonComponent, NextImage } from "components/data";
+
 import * as S from "./styles";
 
 interface TextImageProps {
-  padding?: boolean;
-  color: "orange" | "blue" | "white";
   align: string;
-  invert?: boolean;
-  titleSmall?: string;
   title: string;
-  subTitle: string;
   image: string;
-  absoluteImage?: string;
   link?: {
     text: string;
     url: string;
   };
+  invert?: boolean;
+  subTitle: string;
+  padding?: boolean;
+  titleSmall?: string;
+  absoluteImage?: string;
+  color: "orange" | "blue" | "white";
 }
 
 export function TextImage({
+  link,
   title,
   image,
-  titleSmall,
-  subTitle,
-  link,
   invert,
   color,
   align,
   padding,
+  subTitle,
+  titleSmall,
   absoluteImage,
 }: TextImageProps) {
   return (
@@ -38,15 +38,17 @@ export function TextImage({
         </div>
       )}
 
-      <div
-        className="text-image"
-        data-aos="zoom-in"
-        data-aos-duration="1200"
-        data-aos-delay="300"
-        data-aos-easing="ease-out"
-      >
-        <div className="text">
-          {titleSmall && <h3 className="title-4-regular tk-poppins">{titleSmall}</h3>}
+      <div className="text-image">
+        <div
+          className="text"
+          data-aos="fade-up"
+          data-aos-duration="1200"
+          data-aos-delay="300"
+          data-aos-easing="ease-out"
+        >
+          {titleSmall && (
+            <h3 className="title-4-regular tk-poppins">{titleSmall}</h3>
+          )}
 
           <h2 className="title-2-bold tk-noka uppercase">{title}</h2>
 
@@ -63,13 +65,7 @@ export function TextImage({
           )}
         </div>
 
-        <div
-          className="image"
-          data-aos="zoom-in"
-          data-aos-duration="1200"
-          data-aos-delay="300"
-          data-aos-easing="ease-out"
-        >
+        <div className="image">
           <NextImage src={image} layout="fill" alt="Imagem sobre" />
         </div>
       </div>

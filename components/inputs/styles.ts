@@ -255,3 +255,24 @@ export const InputRadio = styled.div`
     }
   }
 `;
+
+export const File = styled.div`
+  margin-bottom: 30px;
+
+  .input-content {
+    label {
+      margin-bottom: 4px;
+    }
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media only screen and (max-width:1600px) {
+    margin-bottom: 27px;
+  }
+
+  @media only screen and (max-width:1400px) {
+    margin-bottom: 24px;
+  }
+`;

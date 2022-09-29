@@ -35,10 +35,10 @@ export const Header = styled.header`
     .menu {
       width: 220px;
       height: 100%;
-      background-color: var(--primary-color);
+      background-color: var(--blue);
       position: relative;
       z-index: 99;
-      transform: translateX(-100%);
+      transform: translateX(100%);
       transition: 0.3s ease-in-out;
       padding: 25px;
 
@@ -49,9 +49,18 @@ export const Header = styled.header`
         height: auto;
         align-items: flex-start;
         gap: 10px;
-        border-bottom: 1px solid var(--white-cream);
-        padding-bottom: 20px;
-        margin-bottom: 20px;
+
+        .border {
+          border-bottom: 1px solid var(--orange);
+          width: 100%;
+          height: 1px;
+          margin: 10px 0;
+          opacity: .5;
+        }
+
+        h3 {
+          color: var(--orange);
+        }
 
         a,
         span {
@@ -66,13 +75,19 @@ export const Header = styled.header`
       }
 
       .link-redes {
-        background-color: var(--white-cream);
+        background-color: var(--orange);
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 5px;
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
+
+        svg {
+          height: 13px;
+          width: 13px;
+          fill: #fff;
+        }
       }
     }
 

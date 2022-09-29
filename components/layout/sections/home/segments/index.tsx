@@ -1,5 +1,5 @@
-import { Container } from "components/data/container";
-import { NextImage } from "components/data/NextImage";
+import { Container, NextImage } from "components/data";
+
 import * as S from "./styles";
 
 export interface Segment {
